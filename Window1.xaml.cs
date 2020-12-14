@@ -185,25 +185,24 @@ namespace Drink_Water {
                 
                 DataB user = new DataB { ID = ++t, Username = name, Weight = weight, WatAmount = count, Day = DateTime.Now };
                 
-                db.User.AddAsync(user);
-                db.SaveChangesAsync();                
+                db.User.Add(user);
+                db.SaveChangesAsync();
+
+                List<double> vs = db.User.Select(u => u.WatAmount).ToList();
+                
+                double[] vs1 = new double[vs.Count];
+                for (int i = 0; i < vs.Count; i++) {
+                    vs1[i] = i + 1;
+                }
+
+                if (vs.Count > 1) {
+                    Plot.plt.PlotScatter(vs1, vs.ToArray());
+                }
+
+                else {
+                    MessageBox.Show("You need at least 2 days to build a plot");
+                }
             }
-
-            DataContext data = new DataContext();
-            List<double> vs = data.User.Select(u => u.WatAmount).ToList();
-
-            double[] vs1 = new double[vs.Count];
-            for(int i = 0; i < vs.Count; i++) {
-                vs1[i] = i + 1;
-            }
-
-            if(vs.Count > 1) {
-                Plot.plt.PlotScatter(vs1, vs.ToArray());
-            }
-
-            else {
-                MessageBox.Show("You need at least 2 days to build a plot");
-            } 
         }
     }
 }
