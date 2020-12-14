@@ -77,7 +77,7 @@ namespace Drink_Water {
                 double norm = 30 * wght;
         
                 string m = norm.ToString() + " " + "mililiters";
-                //string s = m + " " + "mililiters";
+                
         
                 wdw1.NormLabel.Content = m;
                 wdw1.name = NameBox.Text;

@@ -173,10 +173,19 @@ namespace Drink_Water {
 
             using (DataContext db = new DataContext()) {
 
-                int t = db.User.Select(i => i.ID).Max();
+                int t;
+                
+                if(db.User.ToList().Count == 0) {
+                    t = 0;
+                }
+                
+                else {
+                    t = db.User.Select(i => i.ID).Max();
+                }
+                
                 DataB user = new DataB { ID = ++t, Username = name, Weight = weight, WatAmount = count, Day = DateTime.Now };
                 
-                db.User.Add(user);
+                db.User.AddAsync(user);
                 db.SaveChangesAsync();                
             }
 
@@ -188,7 +197,13 @@ namespace Drink_Water {
                 vs1[i] = i + 1;
             }
 
-            Plot.plt.PlotScatter(vs1, vs.ToArray());
+            if(vs.Count > 1) {
+                Plot.plt.PlotScatter(vs1, vs.ToArray());
+            }
+
+            else {
+                MessageBox.Show("You need at least 2 days to build a plot");
+            } 
         }
     }
 }
