@@ -1,0 +1,27 @@
+﻿<Window x:Class="Drink_Water.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Drink_Water"
+        mc:Ignorable="d"
+        Title="Help" Height="730" Width="550" Background="Aqua" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="This is help" HorizontalAlignment="Center" VerticalAlignment="Top" Height="auto" Foreground="BlueViolet" FontSize="40" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,63,0,0"><Run Text="This application calculates daily norm of water"/><LineBreak/><Run Text="that you have to drink and will remind you to do it"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,128,0,0"><Run Text="First, you have to enter your name and weight so the"/><LineBreak/><Run Text="program can say you your norm of water consuming"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,186,0,0"><Run Text="Than you have to push calculate button and you will see"/><LineBreak/><Run Text="another window"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,244,0,0"><Run Text="In that window you can see a number that will show your"/><LineBreak/><Run Text="norm of water consuming per day"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Text="Lower you can see icons of cups and their capacity" Margin="10,302,0,0"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,334,0,0"><Run Text="Under cups you can see button add. Pressing this button"/><LineBreak/><Run Text="will add cup's capacity to the number of consumed water"/><LineBreak/><Run Text="by day"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,424,0,0"><Run Text="After adding a cup, Cancel button will appear so that you"/><LineBreak/><Run Text="can remove a cup from number of consumed water"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="10,489,0,0"><Run Text="You can also add your own capacity of cup by entering a"/><LineBreak/><Run Text="number in the very right icon"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="auto" Foreground="BlueViolet" FontSize="20" Margin="5,547,0,0"><Run Text="Beneath all described above stuff you can see a plot which"/><LineBreak/><Run Text="represents relation between day and consumed water in"/><LineBreak/><Run Text="that day. To build a plot you have to use Build plot button"/></TextBlock>
+        <Button x:Name="CloseB" Content="Close" Click="Close_Click" Background="Aqua" Foreground="BlueViolet" FontSize="25" Width="530" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1"/>
+    </Grid>
+</Window>
